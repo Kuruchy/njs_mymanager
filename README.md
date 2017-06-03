@@ -2,9 +2,10 @@
 Nodejs admin for My Manager App
 
 How to run:
+```
+git clone
 
-> git clone
+npm install
 
-> npm install
-
-> node index.js
+node index.js
+```
