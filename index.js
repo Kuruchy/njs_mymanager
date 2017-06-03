@@ -30,7 +30,7 @@ admin.initializeApp({
 						}else{
 							players.forEach((player)=>{
 								console.log(player)
-								admin.database().ref('players').set(
+								admin.database().ref('players').push(
 								{
 									name: player,
 									team: team.href
