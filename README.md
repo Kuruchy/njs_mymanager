@@ -1,9 +1,11 @@
-How to run: 
+=======
+# njs_mymanager
+Nodejs admin for My Manager App
 
-> git clone 
+How to run:
+
+> git clone
 
 > npm install
 
 > node index.js
-
-
