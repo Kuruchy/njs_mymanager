@@ -1,6 +1,8 @@
 
 credentials
 
+python/*.json
+
 # Logs
 logs
 *.log
