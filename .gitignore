@@ -1,6 +1,7 @@
 
 credentials
 
+python/*.png
 python/*.json
 
 # Logs
