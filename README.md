@@ -25,3 +25,10 @@ Whoscored seems to be well protected.
 
 Follow these guidelines to jump protection
 https://doc.scrapy.org/en/latest/topics/practices.html#avoiding-getting-banned
+
+10-06-2017
+With python I managed to get the HTML without getting blocked, but since it includes javascript that fills the HTML I need a webserver to execute the js. Using now splash.
+https://github.com/scrapy-plugins/scrapy-splash
+http://splash.readthedocs.io/en/latest/install.html
+
+Now successfully getting the names of the football teams
