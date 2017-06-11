@@ -1,4 +1,6 @@
 
+*.pyc
+
 credentials
 
 python/*.png
