@@ -39,7 +39,11 @@ NEWSPIDER_MODULE = 'scrape_players.spiders'
 #USER_AGENT = 'scrape_players (+http://www.yourdomain.com)'
 
 # Obey robots.txt rules
-ROBOTSTXT_OBEY = True
+ROBOTSTXT_OBEY = False
+
+COOKIES_ENABLED = False
+
+DOWNLOAD_DELAY = 3
 
 
 DOWNLOADER_MIDDLEWARES = {
