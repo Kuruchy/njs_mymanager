@@ -11,6 +11,24 @@
 
 import incapsula
 
+
+WHOSCORED = {
+	'name': 'WHOSCORED',
+	'base_url': 'https://www.whoscored.com',
+	'team_url': '/Regions/206/Tournaments/4/Spain-La-Liga',
+	'team_selector': 'tbody.standings > tr > td > a.team-link',
+	'player_selector': 'tbody#player-table-statistics-body > tr > td.pn > a.player-link'
+}
+TRANSFERMARKT = {
+	'name' : 'TRANSFERMARKT',
+	'base_url': '',
+	'team_url': '',
+	'team_selector': 'div#yw1 > table > tbody > tr > td.hauptlink.hide-for-small > a.vereinprofil_tooltip',
+	'player_selector': 'span.hide-for-small > a.spielprofil_tooltip'
+}
+
+
+
 BOT_NAME = 'scrape_players'
 
 SPIDER_MODULES = ['scrape_players.spiders']
