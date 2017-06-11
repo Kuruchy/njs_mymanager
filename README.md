@@ -36,7 +36,17 @@ http://splash.readthedocs.io/en/latest/install.html
 ```
 $ docker run -p 8050:8050 scrapinghub/splash
 
-$ scrapy crawl players
+$ scrapy crawl <name_of_spider>
 ```
 
-Now successfully getting the names of the players
+Now successfully getting the names of the teams
+
+```
+$ scrapy crawl whoscored
+```
+
+It seems like you can follow the links of each of the teams, but the result is only html, not executed javascript. I'm not sure if I'm doing the
+```
+yield SplashRequest(next_page, self.parse_team, endpoint="render.json", args=splash_args)
+```
+correctly 
