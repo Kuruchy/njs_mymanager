@@ -39,4 +39,4 @@ $ docker run -p 8050:8050 scrapinghub/splash
 $ scrapy crawl players
 ```
 
-Now successfully getting the names of the football teams
+Now successfully getting the names of the players
