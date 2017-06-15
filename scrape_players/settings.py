@@ -11,6 +11,16 @@
 
 import incapsula
 
+MARCA = {
+	'name': 'marca',
+	'base_url': 'http://www.laligafantasymarca.com/puntos?Season=2016&Round=38&Mode=',
+	'player_selector': '.player'
+}
+
+COMUNIAZO = {
+	'name': 'comuniazo',
+	'player_selector': '#jugadores > tbody > tr'
+}
 
 WHOSCORED = {
 	'name': 'WHOSCORED',

@@ -6,6 +6,12 @@ import base64
 from scrapy.crawler import CrawlerProcess
 from scrapy_splash import SplashRequest
 
+import sys
+
+reload(sys)
+
+sys.setdefaultencoding('utf8')
+
 
 class Transfermarkt(scrapy.Spider):
 	name = 'transfermarkt'
@@ -23,16 +29,33 @@ class Transfermarkt(scrapy.Spider):
 		for url in self.start_urls:
 			yield SplashRequest(url, self.parse, endpoint='render.json', args=splash_args)
 
-	def parse(self,response):
-		png_bytes = base64.b64decode(response.data['png'])
-		image = open('screenshot.png','wb')
-		image.write(png_bytes)
-		image.close()
-		results = open('results.json','w')
-		for team in response.css(self.settings.get('TRANSFERMARKT')['team_selector']):
-			name = team.css('::text').extract()[0]
-			results.write(name)
+	def parse_team(self,response):
+		for player in response.css(self.settings.get('TRANSFERMARKT')['player_selector']):
+			name = player.css('::text').extract_first()
 			yield {
-				'team': name
+				'player': name
 			}
-		results.close()
+
+	def parse(self,response):
+		splash_args = {
+			'html': 1,
+			'png': 1,
+			'width': 600,
+			'render_all': 1,
+			'wait': 0.5
+		}
+		# png_bytes = base64.b64decode(response.data['png'])
+		# image = open('screenshot.png','wb')
+		# image.write(png_bytes)
+		# image.close()
+		# results = open('results.json','w')
+		for team in response.css(self.settings.get('TRANSFERMARKT')['team_selector']):
+			name = team.css('::text').extract_first()
+			link = team.css('::attr(href)').extract_first()
+			# results.write(name)
+			# yield {
+			# 	'team': name,
+			# 	'link': link
+			# }
+			yield SplashRequest('https://www.transfermarkt.com'+link, self.parse_team, endpoint='render.json', args=splash_args)
+		# results.close()

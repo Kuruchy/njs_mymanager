@@ -3,8 +3,9 @@
 
 credentials
 
-python/*.png
-python/*.json
+scrape_players/*.pyc
+scrape_players/*.png
+scrape_players/*.json
 
 # Logs
 logs
