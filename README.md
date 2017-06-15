@@ -62,3 +62,7 @@ http://docs.scrapoxy.io/en/master/quick_start/index.html
 
 With scrapoxy you need a AWS/Digital Ocean droplet
 http://scrapoxy.readthedocs.io/en/master/standard/providers/digitalocean/
+
+15-06-2017
+
+Added spiders for comuniazo and liga fantastica. They both work. An idea would be to combine the data from both sources and upload it to the database. This merging and uploading can be done by a http serve implemented in nodejs, which very easily communicates with firebase. 
